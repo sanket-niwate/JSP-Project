@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="sanket.niwate.dao.ProductDao"%>
@@ -6,6 +7,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+DecimalFormat dcf =new DecimalFormat("#.##");
+request.setAttribute("dcf", dcf);
 User auth = (User) request.getSession().getAttribute("auth");
 if ("auth" != null) {
 	request.setAttribute("auth", auth);
